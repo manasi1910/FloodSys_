@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FloodSys</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicons -->
+    <link
+      href="{{ url_for('static', filename='img/favicon-2.png') }}"
+      rel="icon"
+    />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS File -->
+    <link
+      href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries CSS Files -->
+    <link
+      href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}"
+      rel="stylesheet"
+    />
+    <!-- Main Stylesheet File -->
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+
+  <body>
+    <!--==========================
+  Header
+  ============================-->
+    <header id="header">
+      <div id="topbar">
+        <div class="container">
+          <div class="social-links">
+            <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="logo float-left">
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <h1 class="text-light">
+            <a href="index.html" class="scrollto"><span>FloodML</span></a>
+          </h1> -->
+          <a href="index.html" class="scrollto"><img style="margin-top:-5px;min-height: 80px;" src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="img-fluid"></a>
+        </div>
+
+        <nav class="main-nav float-right d-none d-lg-block">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="plots.html">Plots</a></li>
+            <li><a href="predicts.html">Predict</a></li>
+          </ul>
+        </nav>
+        <!-- .main-nav -->
+      </div>
+    </header>
+    <!-- #header -->
+
+    <main id="main">
+      <br /><br /><br /><br /><br />
+      <!--==========================
+      Services Section
+    ============================-->
+      <section id="services" class="section-bg">
+        <div class="container">
+          <header class="section-header">
+            <h3>Interactive Plots</h3>
+            <div class="col-lg-12" align="center" style="font-size: 20px;">
+              <!-- We used powerful machine learning to analyze our datasets, and plotted the results into compelling and interactive data visualizations.  -->
+                The visualizations show flood predictions, damage predictions, and heavy rainfall predictions across India, taking in factors such as precipitation, wind speed, humidity, temperature, cloud cover, as well as previous data history.
+            </div>
+          </header>
+
+          <br>
+          <br>
+
+          <div class="row">
+            <div class="col-lg-12" align="center">
+              <h3>Flood prediction</h3>
+              <div style="font-size: 20px;">
+                <!-- We used powerful machine learning to analyze our datasets, and plotted the results into compelling and interactive data visualizations.  -->
+                The plot below shows our ML powered prediction of where a flood is going to occur, marked by red dots.
+              </div>
+            </div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="col-lg-12" align="center">
+          
+          
+      
+      <div id="d24950a9-a583-4c2c-a0f5-902850ea89c2" style="width: 1200px; height: 1000px;background-color:transparent;" class="plotly-graph-div"></div>
+      <script type="text/javascript">
+          (function(){
+              window.PLOTLYENV={'BASE_URL': 'https://plotly.com'};
+
+              var gd = document.getElementById('d24950a9-a583-4c2c-a0f5-902850ea89c2')
+              var resizeDebounce = null;
+
+              function resizePlot() {
+                  var bb = gd.getBoundingClientRect();
+                  Plotly.relayout(gd, {
+                      width: bb.width,
+                      height: bb.height
+                  });
+              }
+
+              
+              window.addEventListener('resize', function() {
+                  if (resizeDebounce) {
+                      window.clearTimeout(resizeDebounce);
+                  }
+                  resizeDebounce = window.setTimeout(resizePlot, 100);
+              });
+              
+
+              
+              Plotly.plot(gd, {
+                  data: [{"meta": {"columnNames": {"lat": "lat", "lon": "lon", "text": "cost", "marker": {"size": "cost", "color": "cost"}}}, "mode": "markers", "name": "<br>", "type": "scattermapbox", "latsrc": "NandVinchhi:8:d019c3", "lat": ["18.987807", "28.651952", "22.562627", "13.084622", "12.977063", "17.384052", "23.025793", "22.576882", "18.513271", "21.195944", "26.430066", "26.884682", "26.839281", "21.203096", "25.615379", "22.717736", "22.299405", "23.254688", "11.005547", "30.912042", "27.187935", "19.243703", "17.704052", "9.947743", "19.999963", "28.980018", "28.411236", "25.31774", "28.665353", "23.683333", "22.802776", "9.917347", "23.174495", "22.291606", "23.801988", "31.622337", "17.978423", "25.44478", "34.085652", "19.880943", "21.209188", "17.671523", "23.347768", "26.26841", "26.176076", "30.736292", "26.229825", "8.485498", "10.815499", "15.349955", "12.292664", "21.233333", "11.651165", "20.272411", "25.182544", "25.458872", "28.347023", "27.881453", "19.300229", "32.735686", "28.838931", "12.865371", "16.695633", "20.933272", "30.324427", "20.569974", "14.449918", "26.735389", "13.932424", "11.104096", "22.224964", "19.160227", "15.862643", "16.856777", "19.950758", "26.452103", "20.522922", "28.017623", "21.774455", "29.153938", "22.080046", "8.725181", "16.299737", "26.710035", "23.182387", "14.469237", "20.709569", "29.967896", "17.335827", "22.866431", "20.901299", "24.57951", "15.142049", "8.805038", "15.828865", "24.796858", "27.614778", "13.341358", "8.881131", "19.094571", "25.347071", "18.673151", "19.268553", "25.573987", "18.399487", "9.451111", "25.244462", "29.470914", "26.122593", "27.503501", "30.336245", "23.838766", "19.311514", "27.874116", "28.6", "28.894473", "21.478072", "23.330331", "27.150917", "17.005171", "23.255716", "17.913309", "28.804495", "16.960361", "29.387471", "17.247672", "23.253972", "18.436738", "13.635505", "15.269537", "12.545602", "27.566291", "23.736701", "16.827715", "24.808053", "26.758236", "16.205459", "32.274842", "15.823849", "28.994778", "25.144902", "28.729845", "21.641346", "27.215251", "11.933812", "29.691971", "8.177313", "10.785233", "25.775125", "23.836049", "15.503565", "19.798254", "10.362853", "22.025278", "28.403922", "25.776703", "14.7502", "28.460105", "21.273716", "16.187466", "28.793044", "15.477994", "21.043649", "27.598203", "26.168672", "29.534893", "18.11329", "12.905769", "9.494647", "31.104423", "13.828065", "34.209004", "25.894283", "27.479888", "27.598784", "20.85", "28.038114", "11.746289", "31.463218", "12.869617", "26.775486", "24.827327", "30.360993", "23.405761", "13.137679", "10.959789", "12.230204", "28.631245", "30.144533", "11.666667", "26.4835", "27.592698", "10.325163", "24.752037", "25.674673", "27.325739", "10.960277", "26.757509", "15.498289", "34.318174", "26.633333", "27.102349", "20.414315", "20.273855", "20.715115", "26.135638", "10.566667", "11.248016", "19.331589", "26.913312", "23.216667", "30.691512"], "lonsrc": "NandVinchhi:8:779e97", "lon": ["72.836447", "77.231495", "88.363044", "80.248357", "77.587106", "78.456355", "72.587265", "88.318566", "73.849852", "72.830232", "80.267176", "75.789336", "80.923133", "79.089284", "85.101027", "75.85859", "73.208119", "77.402892", "76.966122", "75.853789", "78.003944", "73.135537", "83.297663", "76.253802", "73.776887", "77.706356", "77.313162", "83.005811", "77.439148", "86.983333", "86.185448", "78.119622", "79.935903", "70.793217", "86.443244", "74.875335", "79.600209", "81.843217", "74.805553", "75.346739", "81.428497", "75.910437", "85.338564", "73.005943", "91.762932", "76.788398", "78.173369", "76.949238", "78.696513", "75.138619", "76.638543", "81.633333", "78.158672", "85.833853", "75.839065", "78.579943", "79.421934", "78.07464", "73.058813", "74.869112", "78.776838", "74.842432", "74.231669", "77.75152", "78.033922", "74.515415", "79.986967", "83.38064", "75.572555", "77.346402", "84.864143", "77.314971", "74.508534", "74.569196", "79.295229", "74.638667", "85.78813", "73.314955", "72.152496", "75.722944", "82.155431", "77.684519", "80.457293", "88.428512", "75.776433", "75.92375", "76.998103", "77.545221", "76.83757", "88.401129", "74.777373", "73.690508", "76.92398", "78.151884", "78.036021", "85.003852", "75.138671", "77.102203", "76.584694", "74.738432", "74.640812", "78.10008", "76.770807", "91.896807", "76.584252", "77.556121", "86.971832", "77.703324", "85.390553", "77.672145", "76.392199", "78.738738", "84.792903", "79.879327", "77.2", "76.589166", "83.990505", "75.040315", "78.397808", "81.777839", "87.856906", "77.530105", "79.040305", "82.238086", "76.968246", "80.143682", "69.669281", "79.13222", "79.419888", "76.387103", "76.895078", "76.610202", "92.714596", "75.718988", "93.944203", "79.014875", "77.35567", "75.652865", "80.352187", "77.019375", "82.565335", "77.780681", "69.600868", "77.492786", "79.829792", "76.984483", "77.43437", "79.139093", "73.320611", "91.279386", "80.044541", "85.824938", "77.975827", "88.058333", "77.857731", "87.473655", "78.548129", "77.026352", "76.117376", "81.13888", "76.13968", "78.483605", "75.785058", "81.694709", "75.786111", "75.028981", "83.397743", "79.137104", "76.331108", "77.166623", "77.491425", "74.342853", "80.792104", "94.90837", "80.75089", "72.916667", "79.126677", "79.764362", "75.986418", "79.719469", "82.150182", "92.797868", "76.797819", "88.490733", "78.129989", "79.377472", "79.072954", "79.804362", "74.19552", "92.75", "89.522855", "78.013843", "76.955299", "84.374202", "94.110988", "88.612155", "78.076753", "94.203055", "73.824541", "74.457093", "92.8", "93.692047", "72.83236", "72.996728", "70.987952", "91.800688", "72.616667", "75.780402", "79.466051", "75.787872", "72.683333", "76.853736"], "marker": {"meta": {"columnNames": {"size": "cost", "color": "cost"}}, "color": "rgb(255, 91, 94)", "sizeref": 14081.304895286006, "sizesrc": "NandVinchhi:8:098541", "size": ["26555150", "3114555", "19022850", "20089090", "2218860", "1331335", "1246180", "205555", "998230", "1548650", "12990", "16890", "2022350", "34510", "480025", "771635", "458110", "624030", "111465", "486825", "479115", "1527450", "348000", "5352045", "413200", "703840", "448320", "605550", "479720", "231985", "175675", "40950", "432715", "635815", "99945", "163880", "228725", "5421395", "287900", "274460", "200065", "381470", "524520", "156660", "274235", "297170", "375085", "5293505", "19390", "239480", "205700", "224420", "5630", "220970", "251835", "177575", "683975", "290015", "731840", "174600", "306515", "869860", "141950", "226455", "274120", "161100", "112650", "2935", "127830", "5965", "94160", "152820", "152210", "160500", "55095", "147615", "152110", "77770", "188705", "90420", "107440", "0", "222865", "3867175", "2565985", "209855", "139390", "215790", "166860", "89385", "21580", "15585", "53875", "0", "142975", "158900", "39990", "69160", "283825", "82615", "122420", "91640", "81105", "67755", "123895", "2485", "157290", "122410", "114965", "118995", "133345", "260850", "76315", "465", "3824895", "68210", "625", "108960", "102655", "190750", "120700", "71430", "650", "51265", "96635", "79295", "26025", "92650", "27595", "39570", "1730", "96305", "122060", "71840", "69295", "97600", "57625", "80185", "14355", "75160", "118830", "117830", "67355", "84880", "24200", "66395", "37430", "8785", "97705", "51840", "20745", "56380", "11045", "40455", "97330", "1092100", "16895", "47365", "6025", "59785", "43900", "84330", "44880", "500", "953450", "53585", "30495", "28050", "135250", "75480", "34660", "19320", "980", "36035", "2525", "101470", "82400", "19140", "2530", "4019", "245520", "65530", "52115", "56185", "25925", "5570", "8985", "71405", "33305", "71160", "58090", "5885", "56475", "548920", "49285", "20570", "2310", "18640", "872385", "2175", "25895", "170980", "27420", "19970", "10825", "133460", "43825", "712530", "19855", "1003415", "122640", "68575"], "sizemode": "area", "reversescale": true}, "textsrc": "NandVinchhi:8:098541", "text": ["26555150", "3114555", "19022850", "20089090", "2218860", "1331335", "1246180", "205555", "998230", "1548650", "12990", "16890", "2022350", "34510", "480025", "771635", "458110", "624030", "111465", "486825", "479115", "1527450", "348000", "5352045", "413200", "703840", "448320", "605550", "479720", "231985", "175675", "40950", "432715", "635815", "99945", "163880", "228725", "5421395", "287900", "274460", "200065", "381470", "524520", "156660", "274235", "297170", "375085", "5293505", "19390", "239480", "205700", "224420", "5630", "220970", "251835", "177575", "683975", "290015", "731840", "174600", "306515", "869860", "141950", "226455", "274120", "161100", "112650", "2935", "127830", "5965", "94160", "152820", "152210", "160500", "55095", "147615", "152110", "77770", "188705", "90420", "107440", "0", "222865", "3867175", "2565985", "209855", "139390", "215790", "166860", "89385", "21580", "15585", "53875", "0", "142975", "158900", "39990", "69160", "283825", "82615", "122420", "91640", "81105", "67755", "123895", "2485", "157290", "122410", "114965", "118995", "133345", "260850", "76315", "465", "3824895", "68210", "625", "108960", "102655", "190750", "120700", "71430", "650", "51265", "96635", "79295", "26025", "92650", "27595", "39570", "1730", "96305", "122060", "71840", "69295", "97600", "57625", "80185", "14355", "75160", "118830", "117830", "67355", "84880", "24200", "66395", "37430", "8785", "97705", "51840", "20745", "56380", "11045", "40455", "97330", "1092100", "16895", "47365", "6025", "59785", "43900", "84330", "44880", "500", "953450", "53585", "30495", "28050", "135250", "75480", "34660", "19320", "980", "36035", "2525", "101470", "82400", "19140", "2530", "4019", "245520", "65530", "52115", "56185", "25925", "5570", "8985", "71405", "33305", "71160", "58090", "5885", "56475", "548920", "49285", "20570", "2310", "18640", "872385", "2175", "25895", "170980", "27420", "19970", "10825", "133460", "43825", "712530", "19855", "1003415", "122640", "68575"], "hoverinfo": "lon+lat+text", "texttemplate": "", "autocolorscale": false}],
+                  layout: {"xaxis": {"range": [-1, 6], "autorange": true}, "yaxis": {"range": [-1, 4], "autorange": true}, "mapbox": {"zoom": 3.5323901818767744, "pitch": 0, "style": "open-street-map", "center": {"lat": 22.90365055585795, "lon": 73.89735486943937}, "bearing": 0}, "autosize": true, "template": {"data": {"bar": [{"type": "bar", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "table": [{"type": "table", "cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}}], "carpet": [{"type": "carpet", "aaxis": {"gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "endlinecolor": "#2a3f5f", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "baxis": {"gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "endlinecolor": "#2a3f5f", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}}], "mesh3d": [{"type": "mesh3d", "colorbar": {"ticks": "", "outlinewidth": 0}}], "contour": [{"type": "contour", "colorbar": {"ticks": "", "outlinewidth": 0}, "autocolorscale": true}], "heatmap": [{"type": "heatmap", "colorbar": {"ticks": "", "outlinewidth": 0}, "autocolorscale": true}], "scatter": [{"type": "scatter", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "surface": [{"type": "surface", "colorbar": {"ticks": "", "outlinewidth": 0}}], "heatmapgl": [{"type": "heatmapgl", "colorbar": {"ticks": "", "outlinewidth": 0}}], "histogram": [{"type": "histogram", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "parcoords": [{"line": {"colorbar": {"ticks": "", "outlinewidth": 0}}, "type": "parcoords"}], "scatter3d": [{"type": "scatter3d", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "scattergl": [{"type": "scattergl", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "choropleth": [{"type": "choropleth", "colorbar": {"ticks": "", "outlinewidth": 0}}], "scattergeo": [{"type": "scattergeo", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "histogram2d": [{"type": "histogram2d", "colorbar": {"ticks": "", "outlinewidth": 0}, "autocolorscale": true}], "scatterpolar": [{"type": "scatterpolar", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "contourcarpet": [{"type": "contourcarpet", "colorbar": {"ticks": "", "outlinewidth": 0}}], "scattercarpet": [{"type": "scattercarpet", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "scattermapbox": [{"type": "scattermapbox", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "scatterpolargl": [{"type": "scatterpolargl", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "scatterternary": [{"type": "scatterternary", "marker": {"colorbar": {"ticks": "", "outlinewidth": 0}}}], "histogram2dcontour": [{"type": "histogram2dcontour", "colorbar": {"ticks": "", "outlinewidth": 0}, "autocolorscale": true}]}, "layout": {"geo": {"bgcolor": "white", "showland": true, "lakecolor": "white", "landcolor": "white", "showlakes": true, "subunitcolor": "#C8D4E3"}, "font": {"color": "#2a3f5f"}, "polar": {"bgcolor": "white", "radialaxis": {"ticks": "", "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8"}, "angularaxis": {"ticks": "", "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8"}}, "scene": {"xaxis": {"ticks": "", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "zerolinecolor": "#EBF0F8", "showbackground": true, "backgroundcolor": "white"}, "yaxis": {"ticks": "", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "zerolinecolor": "#EBF0F8", "showbackground": true, "backgroundcolor": "white"}, "zaxis": {"ticks": "", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "zerolinecolor": "#EBF0F8", "showbackground": true, "backgroundcolor": "white"}}, "title": {"x": 0.05}, "xaxis": {"ticks": "", "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "automargin": true, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}, "yaxis": {"ticks": "", "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "automargin": true, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}, "ternary": {"aaxis": {"ticks": "", "gridcolor": "#DFE8F3", "linecolor": "#A2B1C6"}, "baxis": {"ticks": "", "gridcolor": "#DFE8F3", "linecolor": "#A2B1C6"}, "caxis": {"ticks": "", "gridcolor": "#DFE8F3", "linecolor": "#A2B1C6"}, "bgcolor": "white"}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#19d3f3", "#e763fa", "#fecb52", "#ffa15a", "#ff6692", "#b6e880"], "hovermode": "closest", "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0, "#0508b8"], [0.0893854748603352, "#1910d8"], [0.1787709497206704, "#3c19f0"], [0.2681564245810056, "#6b1cfb"], [0.3575418994413408, "#981cfd"], [0.44692737430167595, "#bf1cfd"], [0.5363128491620112, "#dd2bfd"], [0.6256983240223464, "#f246fe"], [0.7150837988826816, "#fc67fd"], [0.8044692737430168, "#fe88fc"], [0.8938547486033519, "#fea5fd"], [0.9832402234636871, "#febefe"], [1, "#fec3fe"]], "sequentialminus": [[0, "#0508b8"], [0.0893854748603352, "#1910d8"], [0.1787709497206704, "#3c19f0"], [0.2681564245810056, "#6b1cfb"], [0.3575418994413408, "#981cfd"], [0.44692737430167595, "#bf1cfd"], [0.5363128491620112, "#dd2bfd"], [0.6256983240223464, "#f246fe"], [0.7150837988826816, "#fc67fd"], [0.8044692737430168, "#fe88fc"], [0.8938547486033519, "#fea5fd"], [0.9832402234636871, "#febefe"], [1, "#fec3fe"]]}, "plot_bgcolor": "white", "paper_bgcolor": "white", "shapedefaults": {"line": {"width": 0}, "opacity": 0.4, "fillcolor": "#506784"}, "annotationdefaults": {"arrowhead": 0, "arrowcolor": "#506784", "arrowwidth": 1}}, "themeRef": "PLOTLY_WHITE"}},
+                  frames: [],
+                  config: {"showLink": false, "linkText": "Export to plotly.com", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+              });
+              
+         }());
+      </script>
+  
+            </div>
+            
+            
+          </div>
+        </div>
+      </section>
+
+      <script>
+        Plotly.plot('graph', [{
+          y: [2,1,2]
+        }], {
+          paper_bgcolor: 'rgba(0,0,0,0)',
+          plot_bgcolor: 'rgba(0,0,0,0)'
+        })
+      </script>
+
+      <!-- #services -->
+
+      <!--==========================
+          About Us Section
+        ============================-->
+      <!-- <section id="about">
+        <div class="container">
+          <header class="section-header">
+            <h3>More Plots!</h3>
+            <p>
+              Add in some more plots!.
+            </p>
+          </header>
+
+          <div class="row"></div>
+        </div>
+      </section> -->
+      <!-- #about -->
+    </main>
+
+    <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer" class="section-bg" style="background-color: #f5f8fd;">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-sm-11">
+                  <div class="footer-info">
+                    <!-- <h3>FloodML</h3> -->
+                    <a href="index.html" class="scrollto"
+                      ><img
+                        style="margin-top: 0px; max-height: 100px;"
+                        src="{{ url_for('static', filename='img/logo.png') }}"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <p style="padding-top:20px;">
+                      FloodML is a tool that uses Machine Learning and Data
+                      Visualization to show you plots with
+                      realtime flood information, as well locational predictions about 
+                      future floods and potential damage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<!--            <div class="col-lg-6">
+              <div class="form">
+                <h4>Send us a message</h4>
+
+                <form action="" method="post" role="form" class="contactForm">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      data-rule="minlen:4"
+                      data-msg="Please enter at least 4 chars"
+                    />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      data-rule="email"
+                      data-msg="Please enter a valid email"
+                    />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      id="subject"
+                      placeholder="Subject"
+                      data-rule="minlen:4"
+                      data-msg="Please enter at least 8 chars of subject"
+                    />
+                    <div class="validation"></div>
+                  </div>
+
+                  <div id="sendmessage">
+                    Your message has been sent. Thank you!
+                  </div>
+                  <div id="errormessage"></div>
+
+                  <div class="text-center">
+                    <button type="submit" title="Send Message">
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>-->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- #footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- JavaScript Libraries -->
+    <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="{{ url_for('static', filename='contactform/contactform.js') }}"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
