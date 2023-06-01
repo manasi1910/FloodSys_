@@ -21,39 +21,39 @@ def index() -> str:
     """Base page."""
     return flask.render_template("index.html")
 
-@app.route('/plots.html')
-def plots():
-    return render_template('plots.html')
+# @app.route('/plots.html')
+# def plots():
+#     return render_template('plots.html')
 
-@app.route('/satellite.html')
-def satellite():
-    direc = "processed_satellite_images/Delhi_July.png"
-    with open(direc, "rb") as image_file:
-        image = base64.b64encode(image_file.read())
-    image = image.decode('utf-8')
-    return render_template('satellite.html', data=data, image_file=image, months=months, text="Delhi in January 2020")
+# @app.route('/satellite.html')
+# def satellite():
+#     direc = "processed_satellite_images/Delhi_July.png"
+#     with open(direc, "rb") as image_file:
+#         image = base64.b64encode(image_file.read())
+#     image = image.decode('utf-8')
+#     return render_template('satellite.html', data=data, image_file=image, months=months, text="Delhi in January 2020")
 
-@app.route('/satellite.html', methods=['GET', 'POST'])
-def satelliteimages():
-    place = request.form.get('place')
-    date = request.form.get('date')
-    data = [{'name':'Delhi', "sel": ""}, {'name':'Mumbai', "sel": ""}, {'name':'Kolkata', "sel": ""}, {'name':'Bangalore', "sel": ""}, {'name':'Chennai', "sel": ""}]
-    months = [{"name":"May", "sel": ""}, {"name":"June", "sel": ""}, {"name":"July", "sel": ""}]
-    for item in data:
-        if item["name"] == place:
-            item["sel"] = "selected"
+# @app.route('/satellite.html', methods=['GET', 'POST'])
+# def satelliteimages():
+#     place = request.form.get('place')
+#     date = request.form.get('date')
+#     data = [{'name':'Delhi', "sel": ""}, {'name':'Mumbai', "sel": ""}, {'name':'Kolkata', "sel": ""}, {'name':'Bangalore', "sel": ""}, {'name':'Chennai', "sel": ""}]
+#     months = [{"name":"May", "sel": ""}, {"name":"June", "sel": ""}, {"name":"July", "sel": ""}]
+#     for item in data:
+#         if item["name"] == place:
+#             item["sel"] = "selected"
     
-    for item in months:
-        if item["name"] == date:
-            item["sel"] = "selected"
+#     for item in months:
+#         if item["name"] == date:
+#             item["sel"] = "selected"
 
-    text = place + " in " + date + " 2020"
+#     text = place + " in " + date + " 2020"
 
-    direc = "processed_satellite_images/{}_{}.png".format(place, date)
-    with open(direc, "rb") as image_file:
-        image = base64.b64encode(image_file.read())
-    image = image.decode('utf-8')
-    return render_template('satellite.html', data=data, image_file=image, months=months, text=text)
+#     direc = "processed_satellite_images/{}_{}.png".format(place, date)
+#     with open(direc, "rb") as image_file:
+#         image = base64.b64encode(image_file.read())
+#     image = image.decode('utf-8')
+#     return render_template('satellite.html', data=data, image_file=image, months=months, text=text)
 
 @app.route('/predicts.html')
 def predicts():
